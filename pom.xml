@@ -4,7 +4,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.cec</groupId>
-    <artifactId>sbss</artifactId>
+    <artifactId>sbs</artifactId>
     <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
 
@@ -13,7 +13,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <start.class>com.cec.sbss.App</start.class>
+        <start.class>com.cec.sbs.App</start.class>
         <maven.test.skip>false</maven.test.skip>
         <maven.test.failure.ignore>false</maven.test.failure.ignore>
         <jacoco.version>0.7.7.201606060606</jacoco.version>
@@ -164,7 +164,7 @@
                 <configuration>
                     <excludes>
                         <exclude>**/App.*</exclude>
-                        <exclude>**/SbssUrlRewriteFilter.*</exclude>
+                        <exclude>**/sbsUrlRewriteFilter.*</exclude>
                         <exclude>static/**</exclude>
                     </excludes>
                     <rules>

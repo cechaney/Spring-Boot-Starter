@@ -1,7 +1,7 @@
 # ----- Core Application properties ----
 spring:
   application:
-    name: sbss
+    name: sbs
   main:
     banner_mode: "ON"
 
@@ -10,7 +10,7 @@ spring:
 
 server:
   port: 8080
-  context-path: /sbss
+  context-path: /sbs
   error:
     path: /error
   tomcat:
@@ -21,7 +21,7 @@ server:
       prefix: access
       suffix: .log
       pattern: "%A %h %l %u %t '%r' %s %b %D"
-    basedir: tomcat_sbss
+    basedir: tomcat_sbs
   compression:
     enabled: true
     mime-types: application/json,application/xml,text/html,text/xml,text/plain
@@ -30,7 +30,7 @@ server:
 logging:
   level:
     ROOT: INFO
-    com.cec.sbss: INFO
+    com.cec.sbs: INFO
     org.springframework: ERROR
     org.springframework.test: ERROR
 
