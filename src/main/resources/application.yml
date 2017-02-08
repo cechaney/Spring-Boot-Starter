@@ -1,0 +1,71 @@
+# ----- Core Application properties ----
+spring:
+  application:
+    name: sbss
+  main:
+    banner_mode: "ON"
+
+  resources:
+    cache-period: 86400
+
+server:
+  port: 8080
+  context-path: /sbss
+  error:
+    path: /error
+  tomcat:
+    max-http-header-size: 12288
+    accesslog:
+      directory: /var/log/
+      enabled: false
+      prefix: access
+      suffix: .log
+      pattern: "%A %h %l %u %t '%r' %s %b %D"
+    basedir: tomcat_sbss
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+    min-response-size: 1000
+
+logging:
+  level:
+    ROOT: INFO
+    com.cec.sbss: INFO
+    org.springframework: ERROR
+    org.springframework.test: ERROR
+
+
+app:
+  config:
+    pollinterval: 1000
+
+management:
+  port: 9991
+
+endpoints:
+  enabled: true
+  info:
+    enabled: true
+    path: "/admin/info"
+  health:
+    enabled: true
+    path: "/admin/health"
+  metrics:
+    enabled: true
+    path: "/admin/metrics"
+  beans:
+    enabled: false
+  shutdown:
+    enabled: false
+
+http-pool:
+    maxConnections: 1000
+    routeMaxConnections: 200
+
+http-timeouts:
+    socketReadTimeout: 5000
+    socketConnectTimeout: 2000
+
+filter-url-patterns:
+    securedEndpointFilterPatterns:
+      - /*
