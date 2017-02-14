@@ -11,7 +11,6 @@ import org.springframework.core.annotation.Order;
 import com.cec.sbs.filter.CacheFilter;
 import com.cec.sbs.filter.InitFilter;
 import com.cec.sbs.filter.SecurityFilter;
-import com.cec.sbs.filter.StaticAssetFilter;
 
 @Configuration
 public class FilterConfiguration {
@@ -22,23 +21,7 @@ public class FilterConfiguration {
     FilterUrlPatternConfig filterPatternConfig;
 
     @Bean
-    @Order(2)
-    public FilterRegistrationBean getStaticAssetFilter() {
-
-        LOGGER.debug("Creating StaticAssetFilter...");
-
-        FilterRegistrationBean reg = new FilterRegistrationBean();
-
-        reg.setFilter(new StaticAssetFilter());
-        reg.addUrlPatterns("/*");
-        reg.setName("StaticAssetFilter");
-
-        return reg;
-
-    }
-
-    @Bean
-    @Order(3)
+    @Order(1)
     public FilterRegistrationBean getSecurityFilter() {
 
         LOGGER.debug("Creating SecurityFilter...");
@@ -56,7 +39,7 @@ public class FilterConfiguration {
 
 
     @Bean
-    @Order(4)
+    @Order(2)
     public FilterRegistrationBean getCacheFilter() {
 
         LOGGER.debug("Creating CacheFilter...");
@@ -72,7 +55,7 @@ public class FilterConfiguration {
     }
 
     @Bean
-    @Order(5)
+    @Order(3)
     public FilterRegistrationBean getInitFilter() {
 
         LOGGER.debug("Creating InitFilter...");
