@@ -41,7 +41,6 @@ public class FilterConfigurationTest {
     @Test
     public void testFilterConfiguration(){
 
-        Assert.assertNotNull(fc.getCacheFilter());
         Assert.assertNotNull(fc.getInitFilter());
 
     }

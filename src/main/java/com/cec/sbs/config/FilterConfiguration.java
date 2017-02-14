@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 
-import com.cec.sbs.filter.CacheFilter;
 import com.cec.sbs.filter.InitFilter;
 import com.cec.sbs.filter.SecurityFilter;
 
@@ -37,25 +36,8 @@ public class FilterConfiguration {
 
     }
 
-
     @Bean
     @Order(2)
-    public FilterRegistrationBean getCacheFilter() {
-
-        LOGGER.debug("Creating CacheFilter...");
-
-        FilterRegistrationBean reg = new FilterRegistrationBean();
-
-        reg.setFilter(new CacheFilter());
-        reg.addUrlPatterns("/*");
-        reg.setName("CacheFilter");
-
-        return reg;
-
-    }
-
-    @Bean
-    @Order(3)
     public FilterRegistrationBean getInitFilter() {
 
         LOGGER.debug("Creating InitFilter...");
