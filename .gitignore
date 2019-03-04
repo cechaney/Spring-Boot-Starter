@@ -1,6 +1,7 @@
 /target
 /.idea
 /.mvn
+/.vscode
 *.iml
 *.class
 *.classpath
